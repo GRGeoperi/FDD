@@ -66,107 +66,41 @@ begin
                         (not BINARIO(3) and BINARIO(2) and not BINARIO(1)) or
                         (not BINARIO(3) and not BINARIO(2) and BINARIO(1));
             -- Cuando es BCD
-            when '1' =>
+            when others =>
                 case BINARIO is
                     -- Cuando se muestra el 0
                     when "0000" =>
-                        SEGMENTO(6) <= '1';
-                        SEGMENTO(5) <= '1';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '1';
-                        SEGMENTO(2) <= '1';
-                        SEGMENTO(1) <= '1';
-                        SEGMENTO(0) <= '0';
+                        SEGMENTO <= "1111110";
                     -- Cuando se muestra el 1
                     when "0001" =>
-                        SEGMENTO(6) <= '0';
-                        SEGMENTO(5) <= '1';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '0';
-                        SEGMENTO(2) <= '0';
-                        SEGMENTO(1) <= '0';
-                        SEGMENTO(0) <= '0';
+                        SEGMENTO <= "0110000";
                     -- Cuando se muestra el 2
                     when "0010" =>
-                        SEGMENTO(6) <= '1';
-                        SEGMENTO(5) <= '1';
-                        SEGMENTO(4) <= '0';
-                        SEGMENTO(3) <= '1';
-                        SEGMENTO(2) <= '1';
-                        SEGMENTO(1) <= '0';
-                        SEGMENTO(0) <= '1';
+                        SEGMENTO <= "1101101";
                     -- Cuando se muestra el 3
                     when "0011" =>
-                        SEGMENTO(6) <= '1';
-                        SEGMENTO(5) <= '1';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '1';
-                        SEGMENTO(2) <= '0';
-                        SEGMENTO(1) <= '0';
-                        SEGMENTO(0) <= '1';
+                        SEGMENTO <= "1111001";
                     -- Cuando se muestra el 4
                     when "0100" =>
-                        SEGMENTO(6) <= '0';
-                        SEGMENTO(5) <= '1';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '0';
-                        SEGMENTO(2) <= '0';
-                        SEGMENTO(1) <= '1';
-                        SEGMENTO(0) <= '1';
+                        SEGMENTO <= "0110011";
                     -- Cuando se muestra el 5
                     when "0101" =>
-                        SEGMENTO(6) <= '1';
-                        SEGMENTO(5) <= '0';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '1';
-                        SEGMENTO(2) <= '0';
-                        SEGMENTO(1) <= '1';
-                        SEGMENTO(0) <= '1';
+                        SEGMENTO <= "1011011";
                     -- Cuando se muestra el 6
                     when "0110" =>
-                        SEGMENTO(6) <= '1';
-                        SEGMENTO(5) <= '0';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '1';
-                        SEGMENTO(2) <= '1';
-                        SEGMENTO(1) <= '1';
-                        SEGMENTO(0) <= '1';
+                        SEGMENTO <= "1011111";
                     -- Cuando se muestra el 7
                     when "0111" =>
-                        SEGMENTO(6) <= '1';
-                        SEGMENTO(5) <= '1';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '0';
-                        SEGMENTO(2) <= '0';
-                        SEGMENTO(1) <= '0';
-                        SEGMENTO(0) <= '0';
+                        SEGMENTO <= "1110000";
                     -- Cuando se muestra el 8
                     when "1000" =>
-                        SEGMENTO(6) <= '1';
-                        SEGMENTO(5) <= '1';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '1';
-                        SEGMENTO(2) <= '1';
-                        SEGMENTO(1) <= '1';
-                        SEGMENTO(0) <= '1';
+                        SEGMENTO <= "1111111";
                     -- Cuando se muestra el 9
                     when "1001" =>
-                        SEGMENTO(6) <= '1';
-                        SEGMENTO(5) <= '1';
-                        SEGMENTO(4) <= '1';
-                        SEGMENTO(3) <= '0';
-                        SEGMENTO(2) <= '0';
-                        SEGMENTO(1) <= '1';
-                        SEGMENTO(0) <= '1';
+                        SEGMENTO <= "1110011";
                     -- Cuando se muestra un -
                     when others =>
-                        SEGMENTO(6) <= '0';
-                        SEGMENTO(5) <= '0';
-                        SEGMENTO(4) <= '0';
-                        SEGMENTO(3) <= '0';
-                        SEGMENTO(2) <= '0';
-                        SEGMENTO(1) <= '0';
-                        SEGMENTO(0) <= '1';
+                        SEGMENTO <= "0000001";
                 end case;
         end case;
     end process;
